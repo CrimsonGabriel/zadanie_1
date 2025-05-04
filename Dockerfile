@@ -11,6 +11,7 @@ COPY requirements.txt .
 # Zainstaluj zależności (bez zapisywania cache pip i bez plików .pyc)
 # Użyj virtualenv dla lepszej izolacji
 RUN python -m venv /opt/venv && \
+    /opt/venv/bin/pip install --no-cache-dir --upgrade pip==23.3 setuptools==70.0.0 && \
     /opt/venv/bin/pip install --no-cache-dir -r requirements.txt
 
 # ---
@@ -58,5 +59,5 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
 # Uwaga: curl musi być dostępny w obrazie bazowym (python:slim go zawiera)
 
 # Komenda uruchamiająca aplikację przy starcie kontenera
-# Użyto venv/bin/python do uruchomienia, aby użyć zainstalowanych pakietów
+# Użyj venv/bin/python do uruchomienia, aby użyć zainstalowanych pakietów
 CMD ["/opt/venv/bin/python", "app.py"]
