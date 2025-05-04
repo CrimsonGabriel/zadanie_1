@@ -120,9 +120,20 @@ Budowanie Obrazu:
 ![image](https://github.com/user-attachments/assets/5813b8b6-d0db-4918-8449-84b90237321c)
 ![image](https://github.com/user-attachments/assets/3b925218-b7a5-4a3e-a51c-ed00c73481ac)
 
-Kontener i obraz z buildx w dockerze
+Standardo przy pierwszym budowaniu cache manifestu nie może zostać wczytany, będzie dopiero stworzony
+
+Kontener i obraz z buildx w dockerze oraz repozytorium
 ![image](https://github.com/user-attachments/assets/9ff41f02-493c-4a0d-9cea-d25c81d1483d)
 ![image](https://github.com/user-attachments/assets/b46cce88-89e9-48c4-b233-192580372170)
+![image](https://github.com/user-attachments/assets/fe32440c-a4c6-4688-85a4-0b27957d060f)
 
+Sprawdzenie na DockerHub:
+![Zrzut ekranu 2025-05-04 164955](https://github.com/user-attachments/assets/d38d2892-dbbc-44c2-8396-162c4612db1f)
+Sprawdzenie lokalnie
+![image](https://github.com/user-attachments/assets/28ddf1b6-2cbe-4acc-bf9c-509bad19503e)
+
+Ponowne zbudowanie obrazu (skuteczność i działanie Cache'a)
+![image](https://github.com/user-attachments/assets/d23ed4f1-a380-4692-83b6-3d77b748ee44)
+![image](https://github.com/user-attachments/assets/206a3ff1-900d-4a31-9b3b-a1f24aa790ff)
 
 
