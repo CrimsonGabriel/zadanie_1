@@ -1,5 +1,4 @@
-# Użyj rozszerzonego frontendu buildkit
-# syntax=docker/dockerfile:1.4
+
 
 # Etap 1: Budowanie zależności (Build Stage)
 # Użyj obrazu Python do zainstalowania zależności, aby warstwa była cache'owana
@@ -8,18 +7,8 @@ FROM python:3.10-slim as builder
 # Ustaw katalog roboczy
 WORKDIR /app_builder
 
-# Upewnij się, że git i ssh są dostępne
-RUN apt-get update && apt-get install -y --no-install-recommends git openssh-client && rm -rf /var/lib/apt/lists/*
-
-# Pobierz kod z publicznego repozytorium GitHub używając mount=ssh
-# Założono, że SSH agent forwarding jest skonfigurowany na hoście
-RUN --mount=type=ssh \
-    mkdir -p -m 0700 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts && \
-    git clone git@github.com:CrimsonGabriel/zadanie_1.git /app_src
-
-WORKDIR /app_src
-COPY requirements.txt . 
-# Skopiuj requirements.txt z pobranego kodu (jeśli jest w repo)
+# Skopiuj tylko plik wymagań, aby wykorzystać cache Dockera
+COPY requirements.txt .
 
 # Zainstaluj zależności (bez zapisywania cache pip i bez plików .pyc)
 # Użyj virtualenv dla lepszej izolacji
@@ -53,8 +42,8 @@ WORKDIR /app
 # Skopiuj wirtualne środowisko z zależnościami z etapu budowania
 COPY --from=builder /opt/venv /opt/venv
 
-# Skopiuj kod aplikacji pobrany w etapie builder
-COPY --from=builder /app_src /app
+# Skopiuj kod aplikacji
+COPY . .
 # Uwaga: Plik .env NIE jest kopiowany (i dobrze!), klucz API podano przez zmienną środowiskową przy uruchamianiu
 
 # Uruchom aplikację jako użytkownik nie-root dla bezpieczeństwa
@@ -74,4 +63,3 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
 # Komenda uruchamiająca aplikację przy starcie kontenera
 # Użyto venv/bin/python do uruchomienia, aby użyć zainstalowanych pakietów
 CMD ["/opt/venv/bin/python", "app.py"]
-
