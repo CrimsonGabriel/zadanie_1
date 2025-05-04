@@ -1,6 +1,8 @@
+
 # Zadanie 1 Sprawozdanie
  Realizacja zadanka
 
+# CZĘŚĆ OBOWIĄZKOWA (1-3)
 #Krok 1 Tworzenie Aplikacji Webowej
 Utworzono folder zadanie1_app zawierający potrzebne pliki
 zadanie1_app/
@@ -9,7 +11,8 @@ zadanie1_app/
 └── templates/
     └── index.html    # Szablon HTML dla interfejsu
     
-Zainstalowano potrzebne biblioteki potrzebne biblioteki: pip install Flask requests python-dotenv
+Zainstalowano potrzebne biblioteki potrzebne biblioteki: pip install Flask requests python-dotenv --break-system-packages
+
 
 Utworzono plik.env z kluczem API pogody
 
@@ -192,7 +195,7 @@ if __name__ == '__main__':
 </body>
 </html>
 
-Uruchomiono w terminalu w katalogu zadanie1_app: python app.py
+Uruchomiono w terminalu w katalogu zadanie1_app: python3 app.py
 Przetestowano lokalnie http://localhost:8080 działanie API
 
 # Krok 2: Tworzenie Pliku Dockerfile
@@ -296,4 +299,13 @@ docker images crimsongabriel/zadanie1-app:v1.0>
 Weryfikacja działania aplikacji w kontenerze:
 ![dzialanieapizkontenera](https://github.com/user-attachments/assets/896c77b1-f2cb-4624-809f-be8a52deb847)
 
+#CZĘŚĆ NIEOBOWIĄZKOWA (DODATKOWA - Opcja 3)
 
+Krok 5  Skanowanie Podatności Obrazu:
+![image](https://github.com/user-attachments/assets/cd5b5092-bb2b-40e4-b96b-ba59dc9e7fc4)
+
+Dodano do Dockerfile:
+/opt/venv/bin/pip install --no-cache-dir --upgrade pip==23.3 setuptools==70.0.0
+Oraz zaktualizowano wersje w requirements.txt na nowsze
+Zbudowano ponownie obraz
+![image](https://github.com/user-attachments/assets/3a6cd666-5818-4bd2-b30b-7899960fe83a)
