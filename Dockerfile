@@ -59,5 +59,5 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
 # Uwaga: curl musi być dostępny w obrazie bazowym (python:slim go zawiera)
 
 # Komenda uruchamiająca aplikację przy starcie kontenera
-# Użyj venv/bin/python do uruchomienia, aby użyć zainstalowanych pakietów
+# Użyto venv/bin/python do uruchomienia, aby użyć zainstalowanych pakietów
 CMD ["/opt/venv/bin/python", "app.py"]
