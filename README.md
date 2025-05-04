@@ -110,5 +110,6 @@ Pokazuje informacje o aktywnym builderze, w tym obsługiwane platformy.
 Wymaga: Skonfigurowania kluczy SSH i agenta SSH na maszynie, która wykonuje docker buildx build. Klucz publiczny musi być dodany do konta GitHub. Czyli z głowy, zrobione w Lab6
 
 Modyfikacja Dockerfile:
-![image](https://github.com/user-attachments/assets/242fda3f-4e9d-472e-b9ed-a795634c32f7)
+![image](https://github.com/user-attachments/assets/31d3092e-e35a-4cd3-8e4e-3f47243db859)
+
 
