@@ -82,3 +82,13 @@ Dodano do Dockerfile:
 Oraz zaktualizowano wersje w requirements.txt na nowsze
 Zbudowano ponownie obraz
 ![image](https://github.com/user-attachments/assets/3a6cd666-5818-4bd2-b30b-7899960fe83a)
+
+Przeanalizowano nowy obraz:
+![image](https://github.com/user-attachments/assets/4574a331-f5b4-4a53-bffb-71bf57352596)
+
+Podatności związane z setuptools (CVE-2024-6345) i pip (CVE-2023-5752) występują w obrazie bazowym python:3.10-slim, ale można je naprawiono poprzez aktualizację tych pakietów w kontenerze
+
+Scout pokazuje całą historię warstw obrazu.
+Warstwa python:3.10-slim nadal zawiera stare wersje pip i setuptools, zanim je nadpisano.
+Aplikacja ich już nie używa, bo działa z /opt/venv/..., czyli z zaktualizowanym środowiskiem, co można już pominąć.
+
