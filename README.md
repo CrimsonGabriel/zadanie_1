@@ -107,9 +107,22 @@ Pokazuje informacje o aktywnym builderze, w tym obsługiwane platformy.
 
 # Krok 7 Modyfikacja Dockerfile dla Dostępu do GitHub i BuildKit:
 
-Wymaga: Skonfigurowania kluczy SSH i agenta SSH na maszynie, która wykonuje docker buildx build. Klucz publiczny musi być dodany do konta GitHub. Czyli z głowy, zrobione w Lab6
+Wymaga: Skonfigurowania kluczy SSH i agenta SSH na maszynie, która wykonuje docker buildx build. Klucz publiczny musi być dodany do konta GitHub. 
 
 Modyfikacja Dockerfile:
 ![image](https://github.com/user-attachments/assets/31d3092e-e35a-4cd3-8e4e-3f47243db859)
+
+Budowanie Obrazu:
+(Trochę będzie rwane i cache'owane etapy bo starałem się naprawić błędy na bieżąco - zrefreshowanie klucza ssh na nowo z lab6, bo coś nie działało i ignorowało) 
+![image](https://github.com/user-attachments/assets/e232fc54-51e0-4565-b9b7-37ab32dfbc96)
+![image](https://github.com/user-attachments/assets/707bab05-6ad5-4102-a234-1445e727ccb7)
+![image](https://github.com/user-attachments/assets/62739ae4-ca95-4d64-95eb-15fe87c2635d)
+![image](https://github.com/user-attachments/assets/5813b8b6-d0db-4918-8449-84b90237321c)
+![image](https://github.com/user-attachments/assets/3b925218-b7a5-4a3e-a51c-ed00c73481ac)
+
+Kontener i obraz z buildx w dockerze
+![image](https://github.com/user-attachments/assets/9ff41f02-493c-4a0d-9cea-d25c81d1483d)
+![image](https://github.com/user-attachments/assets/b46cce88-89e9-48c4-b233-192580372170)
+
 
 
