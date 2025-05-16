@@ -74,7 +74,7 @@ Weryfikacja działania aplikacji w kontenerze:
 
 #CZĘŚĆ NIEOBOWIĄZKOWA (DODATKOWA - Opcja 3)
 
-# Krok 5  Skanowanie Podatności Obrazu:
+# Krok 4  Skanowanie Podatności Obrazu:
 ![image](https://github.com/user-attachments/assets/cd5b5092-bb2b-40e4-b96b-ba59dc9e7fc4)
 
 Dodano do Dockerfile:
@@ -92,7 +92,7 @@ Scout pokazuje całą historię warstw obrazu.
 Warstwa python:3.10-slim nadal zawiera stare wersje pip i setuptools, zanim je nadpisano.
 Aplikacja ich już nie używa, bo działa z /opt/venv/..., czyli z zaktualizowanym środowiskiem, co można już pominąć.
 
-# Krok 6 Konfiguracja Buildera Docker Buildx:
+# Krok 5 Konfiguracja Buildera Docker Buildx:
 
 Do budowania obrazów wieloplatformowych użyto Docker Buildx z driverem docker-container.
 
@@ -105,7 +105,7 @@ Pokazuje informacje o aktywnym builderze, w tym obsługiwane platformy.
 
 ![image](https://github.com/user-attachments/assets/0aa19dfe-7bda-40a8-9655-50c20f418c65)
 
-# Krok 7 Modyfikacja Dockerfile dla Dostępu do GitHub i BuildKit:
+# Krok 6 Modyfikacja Dockerfile dla Dostępu do GitHub i BuildKit:
 
 Wymaga: Skonfigurowania kluczy SSH i agenta SSH na maszynie, która wykonuje docker buildx build. Klucz publiczny musi być dodany do konta GitHub. 
 
