@@ -72,7 +72,7 @@ docker images crimsongabriel/zadanie1-app:v1.0>
 Weryfikacja działania aplikacji w kontenerze:
 ![dzialanieapizkontenera](https://github.com/user-attachments/assets/896c77b1-f2cb-4624-809f-be8a52deb847)
 
-#CZĘŚĆ NIEOBOWIĄZKOWA (DODATKOWA - Opcja 3)
+# CZĘŚĆ NIEOBOWIĄZKOWA (DODATKOWA - Opcja 3)
 
 # Krok 4  Skanowanie Podatności Obrazu:
 ![image](https://github.com/user-attachments/assets/cd5b5092-bb2b-40e4-b96b-ba59dc9e7fc4)
